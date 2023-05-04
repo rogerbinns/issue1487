@@ -22,8 +22,6 @@ jobs:
         env:
           CIBW_SKIP: pp*
           CIBW_ARCHS_LINUX: auto
-          CIBW_BEFORE_BUILD: python -c "import shutil ; shutil.copyfile('setup-template.cfg','setup.cfg')"
-          CIBW_BEFORE_TEST: python -c "import os ; os.remove('setup.cfg')"
           CIBW_TEST_COMMAND: python -c True
 
       - uses: actions/upload-artifact@v3
